@@ -1,87 +1,414 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Hotel 3D</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Unity WebGL Player | Hotel 3D</title>
+		<link rel="shortcut icon" href="TemplateData/favicon.ico" />
+		<link rel="stylesheet" href="TemplateData/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Nunito+Sans:wght@400;700&family=Shippori+Antique&family=Shippori+Antique+B1&family=Ubuntu:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+			integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+			crossorigin="anonymous"
+		></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="64"
+            height="64"
+            viewBox="0 0 226 226"
+            style="fill: #000000"
+          >
+            <defs>
+              <linearGradient
+                x1="141.25"
+                y1="43.54031"
+                x2="141.25"
+                y2="133.58719"
+                gradientUnits="userSpaceOnUse"
+                id="color-1_78538_gr1"
+              >
+                <stop offset="0" stop-color="#ffffff"></stop>
+                <stop offset="1" stop-color="#7574cb"></stop>
+              </linearGradient>
+              <linearGradient
+                x1="60.03125"
+                y1="13.00559"
+                x2="60.03125"
+                y2="208.14953"
+                gradientUnits="userSpaceOnUse"
+                id="color-2_78538_gr2"
+              >
+                <stop offset="0" stop-color="#a3a1ff"></stop>
+                <stop offset="1" stop-color="#3a3897"></stop>
+              </linearGradient>
+              <linearGradient
+                x1="109.29219"
+                y1="13.00559"
+                x2="109.29219"
+                y2="208.14953"
+                gradientUnits="userSpaceOnUse"
+                id="color-3_78538_gr3"
+              >
+                <stop offset="0" stop-color="#a3a1ff"></stop>
+                <stop offset="1" stop-color="#3a3897"></stop>
+              </linearGradient>
+              <linearGradient
+                x1="158.90625"
+                y1="13.00559"
+                x2="158.90625"
+                y2="208.14953"
+                gradientUnits="userSpaceOnUse"
+                id="color-4_78538_gr4"
+              >
+                <stop offset="0" stop-color="#a3a1ff"></stop>
+                <stop offset="1" stop-color="#3a3897"></stop>
+              </linearGradient>
+              <linearGradient
+                x1="77.6875"
+                y1="13.00559"
+                x2="77.6875"
+                y2="208.14953"
+                gradientUnits="userSpaceOnUse"
+                id="color-5_78538_gr5"
+              >
+                <stop offset="0" stop-color="#a3a1ff"></stop>
+                <stop offset="1" stop-color="#3a3897"></stop>
+              </linearGradient>
+              <linearGradient
+                x1="141.25"
+                y1="13.00559"
+                x2="141.25"
+                y2="208.14953"
+                gradientUnits="userSpaceOnUse"
+                id="color-6_78538_gr6"
+              >
+                <stop offset="0" stop-color="#a3a1ff"></stop>
+                <stop offset="1" stop-color="#3a3897"></stop>
+              </linearGradient>
+            </defs>
+            <g
+              fill="none"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <path d="M0,226v-226h226v226z" fill="none"></path>
+              <g id="original-icon">
+                <path
+                  d="M155.375,43.54031v90.04688l-28.25,-9.46375v-57.
+                  fill="url(#color-1_78538_gr1)"
+                ></path>
+                <g>
+                  <path
+                    d="M70.625,178.62475v-9.12475c0,-3.90203 -3.16
+                    fill="url(#color-2_78538_gr2)"
+                  ></path>
+                  <path
+                    d="M123.59375,162.4375h-28.60313l3.88438,7.062
+                    fill="url(#color-3_78538_gr3)"
+                  ></path>
+                  <path
+                    d="M162.4375,171.26563v5.29688h7.0625v-7.0625c
+                    fill="url(#color-4_78538_gr4)"
+                  ></path>
+                  <path
+                    d="M49.4375,153.22094l56.5,-18.93103v-74.27984
+                    fill="url(#color-5_78538_gr5)"
+                  ></path>
+                  <path
+                    d="M113,60.01006v74.27631l56.5,18.93103v-139.4
+                    fill="url(#color-6_78538_gr6)"
+                  ></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <a class="navbar-brand mb-0 h1" href="#">Museo BTS</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        ></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+              <a class="nav-link active h5" aria-current="page" href="#M
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link h5" href="#about">Acerca de</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link h5" href="#control">Controles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link h5" href="#unity-container">Game</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
+    </nav>
+    <div id="Main">
+      <div class="row">
+        <div class="col">
+          <div class="img-header">
+            <div class="welcome">
+              <h1>Museo BTS 3D - Cuadros </h1>
+              <hr />
+              <button id="abajo"><i  class="bi bi-arrow-bar-down"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Hotel 3D</div>
-      </div>
+      <section class="acerca-de" id="about">
+        <div class="info-container">
+          <h1 class="titleinfo">Descripción del juego: <i class="bi bi-controller"></i></h1>
+          <p>
+            En este trabajo se hizo un museo inspirado en la banda kpop BTS, en
+            donde se encuentran cuadros de los integrantes y algunos de sus
+            álbumes. Al posicionarse enfrente de un cuadro, aparece una breve
+            descripción. Para poder moverte dentro del museo solamente tienes
+            que usar las flechas de tu teclado y un mouse.
+          </p>
+          <div class="about-gallery">
+            <img src="img/1.png" />
+            <img src="img/2.png" />
+            <img src="img/3.png" />
+          </div>
+        </div>
+      </section>
+      <!-- controles -->
+      <section class="our-projects " id="control">
+        <div class="deg-background"></div>
+        <div class="ejezproject">
+          <div class="container-project">
+            <div class="project-title">
+              <h2>  Controles <i class="bi bi-dpad-fill"></i></h2>
+            </div>
+            <div class="container container-block">
+              <div class="container table-responsive"">
+              <table class="table table-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Controles</th>
+                    <th scope="col">uso</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="container-mouse">
+                    <th scope="row"><i class="bi bi-mouse2-fill"></i></th>
+                    <td  >Mover vista</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="bi bi-arrow-up-square-fill"></i>
+                    </th>
+                    <td >Hacia delante</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="bi bi-arrow-left-square-fill"></i>
+                    </th>
+                    <td>Hacia la izquierda</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="bi bi-arrow-down-square-fill"></i>
+                    </th>
+                    <td>Hacia atras</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <i class="bi bi-arrow-right-square-fill"></i>
+                    </th>
+                    <td>Hacia la derecha</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <h1>&nbsp</h1>
+            </div>
+          </div>
+        </div>
+            
+  </div>
+      </section>
+      <section>
+        <h1 class="section-game">Game</h1>
+        <div class="container">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <div class="card card-fondo rounded" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Movimiento: </h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-joystick"></i></h6>
+                  
+                      <p class="card-text">Para moverte dentro del museo es con las flechas para caminar y para cambiar la vista de arriba, abajo o un lado es moviendo el mouse</p>
+                        <a class="info"  href="#control" >more</a>
+                    </div>
+                  </div>	
+                </th>
+                <th scope="col">
+                  <div class="card rounded" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Salir: </h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-box-arrow-right"></i></h6>
+                    
+                      <p class="card-text">Dar <i class="bi bi-mouse-fill"></i> en la tecla ESC para salir del modo pantalla completa del juego. </p>
+                      
+                        <h1>&nbsp</h1>
+    
+                        <a class="info" href="#control" >more</a>
+                    </div>
+                  </div>	
+                </th>
+                <th scope="col">
+                  <div class="card rounded" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title fw-bold">Modo pantalla completa: </h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-arrows-angle-expand"></i></h6>
+                    
+                      <p class="card-text">Para poner el museo en pantalla completa da <i class="bi bi-mouse-fill"></i> en el botón de abajo con el icono <img src="https://img.icons8.com/material-outlined/24/000000/expand--v1.png"/> para expandir la pantalla a modo completo. </p>
+                        <a class="info"  href="#control" >more</a>
+                    </div>
+                  </div>	
+                </th>
+                
+              </tr>
+            </thead>																																																																			
+          </table>
+        </div>
+        <div>
+          <h1>&nbsp</h1>
+        </div>
+      </section>
     </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/PROYECTO BUILD 2 GAME.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/PROYECTO BUILD 2 GAME.data",
-        frameworkUrl: buildUrl + "/PROYECTO BUILD 2 GAME.framework.js",
-        codeUrl: buildUrl + "/PROYECTO BUILD 2 GAME.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DarianLu",
-        productName: "Hotel 3D",
-        productVersion: "0.1",
-      };
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var mobileWarning = document.querySelector("#unity-mobile-warning");
+		<div id="unity-container" class="unity-desktop">
+			<canvas id="unity-canvas" width="100%" height="90vh"></canvas>
+			<div id="unity-loading-bar">
+				<div id="unity-logo"></div>
+				<div id="unity-progress-bar-empty">
+					<div id="unity-progress-bar-full"></div>
+				</div>
+			</div>
+			<div id="unity-mobile-warning">
+				WebGL builds are not supported on mobile devices.
+			</div>
+			<div id="unity-footer">
+				<div id="unity-webgl-logo"></div>
+				<div id="unity-fullscreen-button"></div>
+				<div id="unity-build-title">Hotel 3D</div>
+			</div>
+		</div>
+		<script>
+			var buildUrl = "Build";
+			var loaderUrl = buildUrl + "/PROYECTO BUILD 2 GAME.loader.js";
+			var config = {
+				dataUrl: buildUrl + "/PROYECTO BUILD 2 GAME.data",
+				frameworkUrl: buildUrl + "/PROYECTO BUILD 2 GAME.framework.js",
+				codeUrl: buildUrl + "/PROYECTO BUILD 2 GAME.wasm",
+				streamingAssetsUrl: "StreamingAssets",
+				companyName: "DarianLu",
+				productName: "Hotel 3D",
+				productVersion: "0.1",
+			};
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+			var container = document.querySelector("#unity-container");
+			var canvas = document.querySelector("#unity-canvas");
+			var loadingBar = document.querySelector("#unity-loading-bar");
+			var progressBarFull = document.querySelector("#unity-progress-bar-full");
+			var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+			var mobileWarning = document.querySelector("#unity-mobile-warning");
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-      loadingBar.style.display = "block";
+			// By default Unity keeps WebGL canvas render target size matched with
+			// the DOM size of the canvas element (scaled by window.devicePixelRatio)
+			// Set this to false if you want to decouple this synchronization from
+			// happening inside the engine, and you would instead like to size up
+			// the canvas DOM size and WebGL render target sizes yourself.
+			// config.matchWebGLToCanvasSize = false;
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+				container.className = "unity-mobile";
+				// Avoid draining fillrate performance on mobile devices,
+				// and default/override low DPI mode on mobile browsers.
+				config.devicePixelRatio = 1;
+				mobileWarning.style.display = "block";
+				setTimeout(() => {
+					mobileWarning.style.display = "none";
+				}, 5000);
+			} else {
+				canvas.style.width = "100%";
+				canvas.style.height = "90vh";
+			}
+			loadingBar.style.display = "block";
+
+			var script = document.createElement("script");
+			script.src = loaderUrl;
+			script.onload = () => {
+				createUnityInstance(canvas, config, (progress) => {
+					progressBarFull.style.width = 100 * progress + "%";
+				})
+					.then((unityInstance) => {
+						loadingBar.style.display = "none";
+						fullscreenButton.onclick = () => {
+							unityInstance.SetFullscreen(1);
+						};
+					})
+					.catch((message) => {
+						alert(message);
+					});
+			};
+			document.body.appendChild(script);
+		</script>
+	</body>
 </html>
