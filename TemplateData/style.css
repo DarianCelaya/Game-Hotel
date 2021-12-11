@@ -296,6 +296,14 @@ td,
 th {
 	color: white;
 }
+.container {
+	margin-top: 50px;
+	max-width: 1100px;
+	width: 100%;
+	margin: auto;
+
+	/*		background-color: red;*/
+}
 
 .our-projects .ejezproject {
 	position: relative;
