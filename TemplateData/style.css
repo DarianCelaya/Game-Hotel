@@ -88,14 +88,14 @@ body {
 }
 
 /*img Header*/
-.img-header {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	background: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/south-korean-boy-band-bts-backstage-during-the-61st-annual-news-photo-1097661412-1565598626.jpg");
-	background-position: center;
-	background-size: cover;
-}
+/* img-header { */
+/* 	position: relative; */
+/* 	width: 100%; */
+/* 	height: 100vh; */
+/* 	background: url("https://www.teahub.io/photos/full/17-173057_user-uploaded-image-hotel-del-luna-background.jpg"); */
+/* 	background-position: center; */
+/* 	background-size: cover; */
+/*  */
 
 .img-header .welcome {
 	position: absolute;
@@ -280,21 +280,22 @@ h2,
 	position: relative;
 	width: 100%;
 	height: 100%;
-	background: #20125e;
+	background: #03132a;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
 	margin-top: 100px;
 }
 
-/*.our-projects .deg-background{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.8);
-	}*/
+.bi-arrow-right-square-fill,
+.bi-arrow-down-square-fill,
+.bi-arrow-left-square-fill,
+.bi-arrow-up-square-fill,
+.bi-mouse2-fill,
+td,
+th {
+	color: white;
+}
 
 .our-projects .ejezproject {
 	position: relative;
